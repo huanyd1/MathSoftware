@@ -24,5 +24,13 @@ namespace MathSoftware
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
+            this.Title = "Phần mềm toán học";
+            this.Width = 1280;
+            this.Height = 720;
+        }
     }
 }
