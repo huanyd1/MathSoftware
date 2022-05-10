@@ -13,3 +13,10 @@ C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.cspr
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.exe
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.pdb
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\LiveCharts.dll
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\LiveCharts.pdb
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\LiveCharts.xml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.csproj.CopyComplete
