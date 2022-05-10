@@ -1,0 +1,15 @@
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\MathSoftware.exe.config
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\MathSoftware.exe
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\MathSoftware.pdb
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MainWindow.g.cs
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\App.g.cs
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware_MarkupCompile.cache
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware_MarkupCompile.lref
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MainWindow.baml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.g.resources
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.Properties.Resources.resources
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.exe
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.pdb
