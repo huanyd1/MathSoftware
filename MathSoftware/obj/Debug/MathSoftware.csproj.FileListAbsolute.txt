@@ -20,3 +20,9 @@ C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\LiveCharts.xml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.csproj.CopyComplete
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\MaterialDesignColors.dll
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\MaterialDesignColors.pdb
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\App.baml
