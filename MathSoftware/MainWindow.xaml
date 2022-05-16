@@ -7,12 +7,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MathSoftware"
         mc:Ignorable="d"      
-        Width="1280" Height="720"
+        d:DesignHeight="720" d:DesignWidth="1280"
         Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
@@ -96,8 +96,8 @@
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
             </Grid.RowDefinitions>
             <Border Grid.Row="0" BorderBrush="DeepSkyBlue" BorderThickness="2"> 
                 <Grid Grid.Row="0">
@@ -111,48 +111,48 @@
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" BorderBrush="Black" BorderThickness=".5">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Tiêu đề biểu đồ:" FontSize="17" Margin="20 4 0 0"/>
-                            <TextBox x:Name="txtChartTitle" materialDesign:HintAssist.Hint="Nhập tiêu đề của biểu đồ" Width="440" FontSize="17" Margin="30 0 0 0" />
+                            <TextBlock Text="Tiêu đề biểu đồ:" FontSize="17" Margin="120 4 0 0"/>
+                            <TextBox x:Name="txtChartTitle" materialDesign:HintAssist.Hint="Nhập tiêu đề của biểu đồ" Width="630" FontSize="17" Margin="60 0 0 0" />
                         </StackPanel>
                     </Border>
 
                     <Border Grid.Row="1" BorderBrush="Black" BorderThickness=".5">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Chọn loại biểu đồ:" FontSize="17" VerticalAlignment="Center" Margin="20 4 0 0"/>
+                            <TextBlock Text="Chọn loại biểu đồ:" FontSize="17" VerticalAlignment="Center" Margin="120 4 0 0"/>
                             <ComboBox
                                 x:Name="cbChartType"
                                 Style="{StaticResource MaterialDesignComboBox}"
-                                Margin="15 0 0 0"
+                                Margin="43 0 0 0"
                                 FontSize="17"
                                 materialDesign:HintAssist.Hint="Chọn loại biểu đồ"
                                 materialDesign:TextFieldAssist.HasClearButton="True"
-                                Width="440">
+                                Width="630">
                             </ComboBox>
                         </StackPanel>
                     </Border>
 
                     <Border Grid.Row="2" BorderBrush="Black" BorderThickness=".5">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Chú thích cột X:" FontSize="17" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBox x:Name="txtNoteX" Text="" FontSize="17" Margin="36 0 0 0" materialDesign:HintAssist.Hint="Nhập chú thích" Width="440"/>
+                            <TextBlock Text="Chú thích cột tung:" FontSize="17" VerticalAlignment="Center" Margin="120 0 0 0"/>
+                            <TextBox x:Name="txtNoteX" Text="" FontSize="17" Margin="36 0 0 0" materialDesign:HintAssist.Hint="Nhập chú thích" Width="630"/>
                         </StackPanel>
                     </Border>
 
                     <Border Grid.Row="3" BorderBrush="Black" BorderThickness=".5">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Chú thích cột Y:" FontSize="17" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                            <TextBox x:Name="txtNoteY" Text="" FontSize="17" Margin="36 0 0 0" materialDesign:HintAssist.Hint="Nhập chú thích" Width="440"/>
+                            <TextBlock Text="Chú thích cột hoành:" FontSize="17" VerticalAlignment="Center" Margin="120 0 0 0"/>
+                            <TextBox x:Name="txtNoteY" Text="" FontSize="17" Margin="24 0 0 0" materialDesign:HintAssist.Hint="Nhập chú thích" Width="630"/>
                         </StackPanel>
                     </Border>
 
                     <Border Grid.Row="4" BorderBrush="Black" BorderThickness=".5">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Tùy chọn biểu đồ:" FontSize="17" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                            <TextBlock Text="Tùy chọn biểu đồ:" FontSize="17" VerticalAlignment="Center" Margin="120 0 0 0"/>
                             <CheckBox
                                 x:Name="cbShowNote"
                                 IsThreeState="False"
                                 IsChecked="True"
-                                Margin="18 0 0 0"
+                                Margin="44 0 0 0"
                                 FontSize="14"
                                 Content="Hiển thị chú thích" />
                             <CheckBox
@@ -230,7 +230,11 @@
                     </Border>
                 </Grid>
             </Border>
-            <Grid Grid.Row="1"></Grid>
+            <Border Grid.Row="1" BorderBrush="DeepSkyBlue" BorderThickness="1">
+                <Grid x:Name="grdChart">
+                    
+                </Grid>
+            </Border>
         </Grid> 
     </Grid>
 </Window>

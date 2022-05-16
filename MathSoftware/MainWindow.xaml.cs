@@ -32,6 +32,9 @@ namespace MathSoftware
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            grdChart.Children.Add(new UCChart.UCPieChart());
+
+
             this.WindowState = WindowState.Maximized;
             this.Title = "Phần mềm toán học";
             this.Width = 1280;
@@ -41,16 +44,18 @@ namespace MathSoftware
             dtRow.RowChanged += DtRow_RowChanged;
             dtColumn = new DataTable();
 
-            DataColumn column = new DataColumn()
-            {
-                ColumnName = "Nội dung biểu diễn",
-            };
-            dtColumn.Columns.Add(column);
+            //DataColumn column = new DataColumn()
+            //{
+            //    ColumnName = "Nội dung biểu diễn",
+            //};
+            //dtColumn.Columns.Add(column);
 
+            LoadSettingTable();
+            LoadcbChartType();
             LoadDataTable();
         }
 
-        private void LoadDataTable()
+        private void LoadSettingTable()
         {
             dtRow.DefaultView.AllowNew = false;
             dtColumn.DefaultView.AllowNew = false;
@@ -64,6 +69,78 @@ namespace MathSoftware
 
             dtgRow.ItemsSource = dtRow.DefaultView;
 
+            dtgColumn.ItemsSource = dtColumn.DefaultView;
+        }
+
+        private void LoadDataTable()
+        {
+            DataRow row = dtRow.NewRow();
+            row[0] = "Nội dung biểu diễn";
+            dtRow.Rows.Add(row);
+
+            row = dtRow.NewRow();
+            row[0] = "Năm 1991";
+            dtRow.Rows.Add(row);
+
+            row = dtRow.NewRow();
+            row[0] = "Năm 2000";
+            dtRow.Rows.Add(row);
+
+            row = dtRow.NewRow();
+            row[0] = "Năm 2005";
+            dtRow.Rows.Add(row);
+
+            row = dtRow.NewRow();
+            row[0] = "Năm 2013";
+            dtRow.Rows.Add(row);
+
+            RefreshTableColumn();
+
+            row = dtColumn.NewRow();
+            row[0] = "Khách quốc tế";
+            row[1] = "0.3";
+            row[2] = "2.1";
+            row[3] = "3.5";
+            row[4] = "7.5";
+            dtColumn.Rows.Add(row);
+
+            row = dtColumn.NewRow();
+            row[0] = "Khách nội địa";
+            row[1] = "1.5";
+            row[2] = "11.2";
+            row[3] = "16.0";
+            row[4] = "35.0";
+            dtColumn.Rows.Add(row);
+        }
+
+        private void LoadcbChartType()
+        {
+            cbChartType.Items.Add("Biểu đồ cột");
+            cbChartType.Items.Add("Biểu đồ miền");
+            cbChartType.Items.Add("Biểu đồ đường");
+            cbChartType.Items.Add("Biểu đồ tròn");
+            cbChartType.Items.Add("Biểu đồ điểm");
+            cbChartType.Items.Add("Biểu đồ hàng");
+
+            cbChartType.SelectedItem = "Biểu đồ cột";
+        }
+
+        private void RefreshTableColumn()
+        {
+            dtgColumn.ItemsSource = null;
+
+            dtColumn.DefaultView.AllowNew = false;
+
+            foreach (DataRow row in dtRow.Rows)
+            {
+                DataColumn column = new DataColumn
+                {
+                    ColumnName = row[0].ToString(),
+                };
+                dtColumn.Columns.Add(column);
+            }
+
+            dtgColumn.Items.Refresh();
             dtgColumn.ItemsSource = dtColumn.DefaultView;
         }
 
@@ -88,7 +165,7 @@ namespace MathSoftware
         {
             if (dtgRow.SelectedItems.Count != 0)
             {
-                dtColumn.Columns.RemoveAt(dtgRow.SelectedIndex + 1);
+                dtColumn.Columns.RemoveAt(dtgRow.SelectedIndex);
                 dtgColumn.ItemsSource = null;
 
                 dtRow.Rows.RemoveAt(dtgRow.SelectedIndex);
