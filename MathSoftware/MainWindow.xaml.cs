@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MathSoftware.Object;
 
 namespace MathSoftware
 {
@@ -111,6 +112,9 @@ namespace MathSoftware
             row[3] = "16.0";
             row[4] = "35.0";
             dtColumn.Rows.Add(row);
+
+            txtChartTitle.Text = "Số lượt khách quốc tế và khách nội địa ngành du lịch 1991 - 2003";
+            txtNoteX.Text = "Triệu lượt khách";
         }
 
         private void LoadcbChartType()
@@ -213,6 +217,28 @@ namespace MathSoftware
             {
                 MessageBox.Show("Bạn chưa chọn cột để xóa, vui lòng thử lại", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+        }
+        private ObjChartData _objChart;
+        public void GetAllChartData()
+        {
+            _objChart = new ObjChartData();
+
+            GetChartData data = new GetChartData(_objChart);
+            data.GetRowData(dtRow);
+            data.GetColumnData(dtColumn);
+            data.GetTitleChart(txtChartTitle.Text.ToString());
+            data.GetChartType(cbChartType.SelectedItem.ToString());
+            data.GetNoteAxis(txtNoteX.Text.ToString(), txtNoteY.Text.ToString());
+            data.GetShowValue(bool.Parse(cbShowNote.IsChecked.ToString()), bool.Parse(cbShowValue.IsChecked.ToString()));
+            data.GetPosition(lbTitleLocation.SelectedItem.ToString(), lbUnitLocation.SelectedItem.ToString(), lbUnitChart.SelectedItem.ToString());
+        }
+
+        private void btnCreateChart_Click(object sender, RoutedEventArgs e)
+        {
+            GetAllChartData();
+
+            grdChart.Children.Clear();
+            grdChart.Children.Add(new UCChart.UCColumnChart(_objChart));
         }
     }
 }

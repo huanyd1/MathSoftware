@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\App.xaml
-2-965695570
+3-1537832274
 10640528605
-9-1693192958
+111950198209
 137-646905721
-MainWindow.xaml;UCChart\UCPieChart.xaml;
+MainWindow.xaml;UCChart\UCColumnChart.xaml;UCChart\UCPieChart.xaml;
 
 True
 

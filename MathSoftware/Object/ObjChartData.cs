@@ -18,8 +18,8 @@ namespace MathSoftware.Object
         public string _horizontalAxis { get; set; }
         public bool _showNote { get; set; }
         public bool _showData { get; set; }
-        public bool _titlePositon { get; set; }
-        public bool _noteUnitPosition { get; set; }
+        public string _titlePositon { get; set; }
+        public string _noteUnitPosition { get; set; }
         public string _noteUnitChart { get; set; }
 
         public ObjChartData()
@@ -33,8 +33,8 @@ namespace MathSoftware.Object
             this._horizontalAxis = "";
             this._showNote = true;
             this._showData = true;
-            this._titlePositon = true;
-            this._noteUnitPosition = true;
+            this._titlePositon = "";
+            this._noteUnitPosition = "";
             this._noteUnitChart = "";
         }
     }

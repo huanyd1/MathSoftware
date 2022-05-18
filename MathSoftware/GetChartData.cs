@@ -62,7 +62,7 @@ namespace MathSoftware
             _objChartData._showData = showData;
         }
 
-        public void GetPosition(bool titlePosition, bool unitPosition, string unitChart)
+        public void GetPosition(string titlePosition, string unitPosition, string unitChart)
         {
             _objChartData._titlePositon = titlePosition;
             _objChartData._noteUnitPosition = unitPosition;

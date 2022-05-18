@@ -106,7 +106,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="GetChartData.cs" />
+    <Compile Include="NotifyCommon\NotifyCommon.cs" />
     <Compile Include="Object\ObjChartData.cs" />
+    <Compile Include="UCChart\UCColumnChart.xaml.cs">
+      <DependentUpon>UCColumnChart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UCChart\UCPieChart.xaml.cs">
       <DependentUpon>UCPieChart.xaml</DependentUpon>
     </Compile>
@@ -122,6 +126,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UCChart\UCColumnChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UCChart\UCPieChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

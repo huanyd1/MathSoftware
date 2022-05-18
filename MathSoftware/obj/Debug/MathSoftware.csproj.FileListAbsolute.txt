@@ -74,5 +74,7 @@ C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\System.Numerics.V
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware.exe.config
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\MathSoftware_Content.g.cs
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCPieChart.g.cs
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCPieChart.baml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCPieChart.g.cs
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCPieChart.baml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCColumnChart.g.cs
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCColumnChart.baml

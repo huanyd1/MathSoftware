@@ -218,7 +218,8 @@
                     </Border>
                     <Border Grid.Row="5" BorderBrush="Black" BorderThickness=".5">
                         <Button
-                            x:Name="btnCreate"
+                            x:Name="btnCreateChart"
+                            Click="btnCreateChart_Click"
                             Style="{StaticResource MaterialDesignRaisedDarkButton}"
                             Width="150"
                             Height="35">
