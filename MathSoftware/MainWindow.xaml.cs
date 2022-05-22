@@ -227,7 +227,7 @@ namespace MathSoftware
             data.GetRowData(dtRow);
             data.GetColumnData(dtColumn);
             data.GetTitleChart(txtChartTitle.Text.ToString());
-            data.GetChartType(cbChartType.SelectedItem.ToString());
+            data.GetChartType(cbChartType);
             data.GetNoteAxis(txtNoteX.Text.ToString(), txtNoteY.Text.ToString());
             data.GetShowValue(bool.Parse(cbShowNote.IsChecked.ToString()), bool.Parse(cbShowValue.IsChecked.ToString()));
             data.GetPosition(lbTitleLocation.SelectedItem.ToString(), lbUnitLocation.SelectedItem.ToString(), lbUnitChart.SelectedItem.ToString());

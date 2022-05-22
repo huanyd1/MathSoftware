@@ -58,11 +58,19 @@ namespace MathSoftware.UCChart
                         _column.LabelPoint = PointLabel;
                         _objChart._seriesCollection.Add(_column);
 
-                        //axisX.Position = titleLocation_;
-                        //axisX.FontSize = 15;
-                        //axisX.Labels = obj_.lsTitle_;
-                        //axisX.Title = obj_.charttitle_.ToString();
-                        //axisY.Title = obj_.noteY_.ToString();
+                        if(_objChart._titlePositon.ToString().Equals("Ở dưới"))
+                        {
+                            axisX.Position = AxisPosition.LeftBottom;
+                        }
+                        else
+                        {
+                            axisX.Position = AxisPosition.RightTop;
+                        }
+
+                        axisX.FontSize = 15;
+                        axisX.Labels = _objChart._lsRow;
+                        axisX.Title = _objChart._chartTitle.ToString();
+                        axisY.Title = _objChart._verticalAxis.ToString();
 
                         ColumnChart.LegendLocation = LegendLocation.Top;
                         ColumnChart.Series = _objChart._seriesCollection;
