@@ -106,13 +106,25 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="GetChartData.cs" />
-    <Compile Include="NotifyCommon\NotifyCommon.cs" />
+    <Compile Include="NotifyCommon.cs" />
     <Compile Include="Object\ObjChartData.cs" />
+    <Compile Include="UCChart\UCAreaChart.xaml.cs">
+      <DependentUpon>UCAreaChart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UCChart\UCColumnChart.xaml.cs">
       <DependentUpon>UCColumnChart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UCChart\UCLineChart.xaml.cs">
+      <DependentUpon>UCLineChart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UCChart\UCPieChart.xaml.cs">
       <DependentUpon>UCPieChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCChart\UCRowChart.xaml.cs">
+      <DependentUpon>UCRowChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCChart\UCScatterChart.xaml.cs">
+      <DependentUpon>UCScatterChart.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -126,11 +138,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UCChart\UCAreaChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UCChart\UCColumnChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UCChart\UCLineChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UCChart\UCPieChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCChart\UCRowChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCChart\UCScatterChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

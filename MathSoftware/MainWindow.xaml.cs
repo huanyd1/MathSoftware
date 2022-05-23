@@ -33,8 +33,7 @@ namespace MathSoftware
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            grdChart.Children.Add(new UCChart.UCPieChart());
-
+            //grdChart.Children.Add(new UCChart.UCPieChart());
 
             this.WindowState = WindowState.Maximized;
             this.Title = "Phần mềm toán học";
@@ -44,12 +43,6 @@ namespace MathSoftware
             dtRow = new DataTable();
             dtRow.RowChanged += DtRow_RowChanged;
             dtColumn = new DataTable();
-
-            //DataColumn column = new DataColumn()
-            //{
-            //    ColumnName = "Nội dung biểu diễn",
-            //};
-            //dtColumn.Columns.Add(column);
 
             LoadSettingTable();
             LoadcbChartType();
@@ -228,7 +221,7 @@ namespace MathSoftware
             data.GetColumnData(dtColumn);
             data.GetTitleChart(txtChartTitle.Text.ToString());
             data.GetChartType(cbChartType);
-            data.GetNoteAxis(txtNoteX.Text.ToString(), txtNoteY.Text.ToString());
+            data.GetNoteAxis(txtNoteX.Text.ToString());
             data.GetShowValue(bool.Parse(cbShowNote.IsChecked.ToString()), bool.Parse(cbShowValue.IsChecked.ToString()));
             data.GetPosition(lbTitleLocation.SelectedItem.ToString(), lbUnitLocation.SelectedItem.ToString(), lbUnitChart.SelectedItem.ToString());
         }
@@ -238,7 +231,31 @@ namespace MathSoftware
             GetAllChartData();
 
             grdChart.Children.Clear();
-            grdChart.Children.Add(new UCChart.UCColumnChart(_objChart));
+
+            if(cbChartType.SelectedItem.ToString().Equals("Biểu đồ cột"))
+            {
+                grdChart.Children.Add(new UCChart.UCColumnChart(_objChart));
+            }
+            else if(cbChartType.SelectedItem.ToString().Equals("Biểu đồ tròn"))
+            {
+                grdChart.Children.Add(new UCChart.UCPieChart(_objChart));
+            }
+            else if(cbChartType.SelectedItem.ToString().Equals("Biểu đồ miền"))
+            {
+                grdChart.Children.Add(new UCChart.UCAreaChart(_objChart));
+            }
+            else if(cbChartType.SelectedItem.ToString().Equals("Biểu đồ đường"))
+            {
+                grdChart.Children.Add(new UCChart.UCLineChart(_objChart));
+            }
+            else if (cbChartType.SelectedItem.ToString().Equals("Biểu đồ hàng"))
+            {
+                grdChart.Children.Add(new UCChart.UCRowChart(_objChart));
+            }
+            else if (cbChartType.SelectedItem.ToString().Equals("Biểu đồ điểm"))
+            {
+                grdChart.Children.Add(new UCChart.UCScatterChart(_objChart));
+            }
         }
     }
 }

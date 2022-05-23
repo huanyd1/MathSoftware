@@ -20,13 +20,14 @@ using System.Windows.Shapes;
 namespace MathSoftware.UCChart
 {
     /// <summary>
-    /// Interaction logic for UCPieChart.xaml
+    /// Interaction logic for UCScatterChart.xaml
     /// </summary>
-    public partial class UCPieChart : UserControl
+    public partial class UCScatterChart : UserControl
     {
-        private PieSeries _pie;
+        private ScatterSeries _scatter;
         private ObjChartData _objChart;
-        public UCPieChart(ObjChartData objChart)
+
+        public UCScatterChart(ObjChartData objChart)
         {
             InitializeComponent();
 
@@ -36,7 +37,7 @@ namespace MathSoftware.UCChart
         public ChartValues<double> _value;
         public Func<ChartPoint, string> PointLabel { get; set; }
 
-        private void UCPieChart_Loaded(object sender, RoutedEventArgs e)
+        private void UCScatterChart_Loaded(object sender, RoutedEventArgs e)
         {
             PointLabel = chartPoint =>
               string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
@@ -44,7 +45,7 @@ namespace MathSoftware.UCChart
             for (int i = 0; i < _objChart._lsColumn.Count; i++)
             {
                 //Khởi tạo giá trị
-                _pie = new PieSeries();
+                _scatter = new ScatterSeries();
 
                 _value = new ChartValues<double>();
 
@@ -52,11 +53,11 @@ namespace MathSoftware.UCChart
                 {
                     if (j == 0)
                     {
-                        _pie.Title = _objChart._lsColumn[i][j].ToString();
-                        _pie.Values = _value;
-                        _pie.DataLabels = true;
-                        _pie.LabelPoint = PointLabel;
-                        _objChart._seriesCollection.Add(_pie);
+                        _scatter.Title = _objChart._lsColumn[i][j].ToString();
+                        _scatter.Values = _value;
+                        _scatter.DataLabels = true;
+                        _scatter.LabelPoint = PointLabel;
+                        _objChart._seriesCollection.Add(_scatter);
 
                         if (_objChart._titlePositon.ToString().Equals("Ở dưới"))
                         {
@@ -72,8 +73,8 @@ namespace MathSoftware.UCChart
                         axisX.Title = _objChart._chartTitle.ToString();
                         //axisY.Title = _objChart._verticalAxis.ToString();
 
-                        PieChart.LegendLocation = LegendLocation.Top;
-                        PieChart.Series = _objChart._seriesCollection;
+                        ScatterChart.LegendLocation = LegendLocation.Top;
+                        ScatterChart.Series = _objChart._seriesCollection;
                     }
                     else
                     {
@@ -91,10 +92,11 @@ namespace MathSoftware.UCChart
                             return;
                         }
                     }
-                }
 
+                }
             }
         }
+
         public bool CheckIfAlphabet(string salDesc)
         {
             Regex objAlphaPattern = new Regex(@"^[0-9.]*$");
