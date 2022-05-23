@@ -78,3 +78,11 @@ C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCPieChar
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCPieChart.baml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCColumnChart.g.cs
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCColumnChart.baml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCAreaChart.g.cs
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCAreaChart.baml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCLineChart.g.cs
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCLineChart.baml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCRowChart.g.cs
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCRowChart.baml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCScatterChart.g.cs
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCScatterChart.baml

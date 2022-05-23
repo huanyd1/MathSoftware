@@ -33,7 +33,7 @@ namespace MathSoftware
             }
             catch
             {
-                MessageBox.Show(NotifyCommon.NotifyCommon.NotifyTable.TableRowError, NotifyCommon.NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
+                MessageBox.Show(NotifyCommon.NotifyTable.TableRowError, NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
             }
             
         }
@@ -54,7 +54,7 @@ namespace MathSoftware
             }
             catch
             {
-                MessageBox.Show(NotifyCommon.NotifyCommon.NotifyTable.TableColumnError, NotifyCommon.NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
+                MessageBox.Show(NotifyCommon.NotifyTable.TableColumnError, NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
             }
         }
 
@@ -66,7 +66,7 @@ namespace MathSoftware
             }
             catch
             {
-                MessageBox.Show(NotifyCommon.NotifyCommon.NotifyTitle.TitleError, NotifyCommon.NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
+                MessageBox.Show(NotifyCommon.NotifyTitle.TitleError, NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
             }
         }
 
@@ -80,25 +80,22 @@ namespace MathSoftware
             }
             catch
             {
-                MessageBox.Show(NotifyCommon.NotifyCommon.NotifyChartType.TypeError, NotifyCommon.NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
+                MessageBox.Show(NotifyCommon.NotifyChartType.TypeError, NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
             }
         }
 
-        public void GetNoteAxis(string axisX, string axisY)
+        public void GetNoteAxis(string axisX)
         {
             string _axisX = "";
-            string _axisY = "";
             try
             {
                 _axisX = axisX;
-                _axisY = axisY;
 
                 _objChartData._verticalAxis = axisX;
-                _objChartData._horizontalAxis = axisY;
             }
             catch
             {
-                MessageBox.Show(NotifyCommon.NotifyCommon.NotifyAxis.AxisError, NotifyCommon.NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
+                MessageBox.Show(NotifyCommon.NotifyAxis.AxisError, NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
             }
 
         }
@@ -117,7 +114,7 @@ namespace MathSoftware
             }
             catch
             {
-                MessageBox.Show(NotifyCommon.NotifyCommon.NotifyShowValue.ShowValueError, NotifyCommon.NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
+                MessageBox.Show(NotifyCommon.NotifyShowValue.ShowValueError, NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
             }
 
         }
@@ -140,7 +137,7 @@ namespace MathSoftware
             }
             catch
             {
-                MessageBox.Show(NotifyCommon.NotifyCommon.NotifyShowPosition.ShowPositionError, NotifyCommon.NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
+                MessageBox.Show(NotifyCommon.NotifyShowPosition.ShowPositionError, NotifyCommon.NotifyType.TypeError, MessageBoxButton.OK);
             }
 
         }

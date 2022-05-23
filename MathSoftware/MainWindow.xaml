@@ -107,7 +107,6 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" BorderBrush="Black" BorderThickness=".5">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
@@ -139,13 +138,6 @@
                     </Border>
 
                     <Border Grid.Row="3" BorderBrush="Black" BorderThickness=".5">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Chú thích cột hoành:" FontSize="17" VerticalAlignment="Center" Margin="120 0 0 0"/>
-                            <TextBox x:Name="txtNoteY" Text="" FontSize="17" Margin="24 0 0 0" materialDesign:HintAssist.Hint="Nhập chú thích" Width="630"/>
-                        </StackPanel>
-                    </Border>
-
-                    <Border Grid.Row="4" BorderBrush="Black" BorderThickness=".5">
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                             <TextBlock Text="Tùy chọn biểu đồ:" FontSize="17" VerticalAlignment="Center" Margin="120 0 0 0"/>
                             <CheckBox
@@ -216,7 +208,7 @@
                             </materialDesign:PopupBox>
                         </StackPanel>
                     </Border>
-                    <Border Grid.Row="5" BorderBrush="Black" BorderThickness=".5">
+                    <Border Grid.Row="4" BorderBrush="Black" BorderThickness=".5">
                         <Button
                             x:Name="btnCreateChart"
                             Click="btnCreateChart_Click"
