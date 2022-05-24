@@ -86,3 +86,9 @@ C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCRowChar
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCRowChart.baml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCScatterChart.g.cs
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\obj\Debug\UCChart\UCScatterChart.baml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\EPPlus.dll
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\EPPlus.xml
+C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml

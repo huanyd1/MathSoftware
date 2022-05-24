@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MathSoftware.FileManager;
 using MathSoftware.Object;
 
 namespace MathSoftware
@@ -256,6 +257,16 @@ namespace MathSoftware
             {
                 grdChart.Children.Add(new UCChart.UCScatterChart(_objChart));
             }
+        }
+
+        private void btnImportFile_Click(object sender, RoutedEventArgs e)
+        {
+            ImportExcel import = new ImportExcel(dtRow, dtColumn);
+        }
+
+        private void btnExportFile_Click(object sender, RoutedEventArgs e)
+        {
+            ExportExcel export = new ExportExcel(dtRow, dtColumn);
         }
     }
 }

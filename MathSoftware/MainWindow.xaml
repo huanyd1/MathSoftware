@@ -64,6 +64,32 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
                         <Button
+                            x:Name="btnImportFile"
+                            Click="btnImportFile_Click"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Width="150"
+                            Height="35"
+                            ToolTip="Nhập dữ liệu">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="TableArrowLeft" VerticalAlignment="Center" Margin="0 2 0 0"/>
+                                <TextBlock Margin="5 0 0 0">Nhập dữ liệu</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            x:Name="btnExportFile"
+                            Click="btnExportFile_Click"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Margin="15 0 0 0"
+                            Width="150"
+                            Height="35"
+                            ToolTip="Xuất dữa liệu">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="TableArrowRight" VerticalAlignment="Center"/>
+                                <TextBlock Margin="5 0 0 0">Xuất dữa liệu</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        
+                        <Button
                             x:Name="btnAddColumn"
                             Click="btnAddColumn_Click"
                             Height="35"
