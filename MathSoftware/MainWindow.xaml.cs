@@ -261,7 +261,7 @@ namespace MathSoftware
 
         private void btnImportFile_Click(object sender, RoutedEventArgs e)
         {
-            ImportExcel import = new ImportExcel(dtRow, dtColumn);
+            ImportExcel import = new ImportExcel(dtRow, dtColumn, dtgColumn);
         }
 
         private void btnExportFile_Click(object sender, RoutedEventArgs e)

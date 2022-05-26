@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace MathSoftware.FileManager
 {
@@ -15,12 +16,14 @@ namespace MathSoftware.FileManager
     {
         private DataTable _dtRow;
         private DataTable _dtColumn;
+        private DataGrid _dtgColumn;
         private DataRow _row;
 
-        public ImportExcel(DataTable row, DataTable column)
+        public ImportExcel(DataTable row, DataTable column, DataGrid dtgColumn)
         {
             _dtRow = row;
             _dtColumn = column;
+            _dtgColumn = dtgColumn;
 
             Import();
         }
@@ -58,6 +61,26 @@ namespace MathSoftware.FileManager
                             _dtRow.Rows.Add(_row);
                         }
 
+                        //clear table
+                        _dtColumn.Rows.Clear();
+                        _dtColumn.Columns.Clear();
+
+                        //row changed
+                        _dtgColumn.ItemsSource = null;
+
+                        foreach (DataRow row in _dtRow.Rows)
+                        {                         
+                            DataColumn column = new DataColumn
+                            {
+                                ColumnName = row[0].ToString(),
+                            };
+                            _dtColumn.Columns.Add(column);
+                        }
+
+                        _dtgColumn.Items.Refresh();
+                        _dtgColumn.ItemsSource = _dtColumn.DefaultView;
+                        //end rowchange
+
                         for (int i = workSheet.Dimension.Start.Row + 1; i <= workSheet.Dimension.End.Row; i++)
                         {
                             int index = 0;
@@ -70,6 +93,8 @@ namespace MathSoftware.FileManager
                             }
                             _dtColumn.Rows.Add(_row);
                         }
+
+                        MessageBox.Show("Nhập dữ liệut thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     catch (Exception ex)
                     {
@@ -107,8 +132,24 @@ namespace MathSoftware.FileManager
 
                     }
 
-
                     _dtColumn.Rows.Clear();
+                    _dtColumn.Columns.Clear();
+
+                    //row changed
+                    _dtgColumn.ItemsSource = null;
+
+                    foreach (DataRow row in _dtRow.Rows)
+                    {
+                        DataColumn column = new DataColumn
+                        {
+                            ColumnName = row[0].ToString(),
+                        };
+                        _dtColumn.Columns.Add(column);
+                    }
+
+                    _dtgColumn.Items.Refresh();
+                    _dtgColumn.ItemsSource = _dtColumn.DefaultView;
+                    //end rowchange
 
                     foreach (string line in lines)
                     {
@@ -118,12 +159,13 @@ namespace MathSoftware.FileManager
                         for (int i = 0; i < name.Length; i++)
                         {
                             _row[index] = name[i];
-                            index++;
+                            index++;                       
                         }
-                        _dtColumn.Rows.Add(_row);
-
+                        _dtColumn.Rows.Add(_row);                 
                     }
                     _dtColumn.Rows.RemoveAt(0);
+
+                    MessageBox.Show("Nhập dữ liệut thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
