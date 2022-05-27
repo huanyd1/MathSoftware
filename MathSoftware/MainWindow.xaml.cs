@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MathSoftware.FileManager;
 using MathSoftware.Object;
 
 namespace MathSoftware
@@ -226,25 +227,25 @@ namespace MathSoftware
             data.GetPosition(lbTitleLocation.SelectedItem.ToString(), lbUnitLocation.SelectedItem.ToString(), lbUnitChart.SelectedItem.ToString());
         }
 
-        private void btnCreateChart_Click(object sender, RoutedEventArgs e)
+        private void ExecuteChart()
         {
             GetAllChartData();
 
             grdChart.Children.Clear();
 
-            if(cbChartType.SelectedItem.ToString().Equals("Biểu đồ cột"))
+            if (cbChartType.SelectedItem.ToString().Equals("Biểu đồ cột"))
             {
                 grdChart.Children.Add(new UCChart.UCColumnChart(_objChart));
             }
-            else if(cbChartType.SelectedItem.ToString().Equals("Biểu đồ tròn"))
+            else if (cbChartType.SelectedItem.ToString().Equals("Biểu đồ tròn"))
             {
                 grdChart.Children.Add(new UCChart.UCPieChart(_objChart));
             }
-            else if(cbChartType.SelectedItem.ToString().Equals("Biểu đồ miền"))
+            else if (cbChartType.SelectedItem.ToString().Equals("Biểu đồ miền"))
             {
                 grdChart.Children.Add(new UCChart.UCAreaChart(_objChart));
             }
-            else if(cbChartType.SelectedItem.ToString().Equals("Biểu đồ đường"))
+            else if (cbChartType.SelectedItem.ToString().Equals("Biểu đồ đường"))
             {
                 grdChart.Children.Add(new UCChart.UCLineChart(_objChart));
             }
@@ -256,6 +257,44 @@ namespace MathSoftware
             {
                 grdChart.Children.Add(new UCChart.UCScatterChart(_objChart));
             }
+        }
+
+        private void cbChartType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbChartType.SelectedItem.ToString().Equals("Biểu đồ hàng"))
+            {
+                tbTitleLocation.Text = "Vị trí Chú thích đơn vị tính:";
+                tbUnitLocation.Text = "Vị trí Tiêu đề:";
+            }
+            else
+            {
+                tbTitleLocation.Text = "Vị trí Tiêu đề:";
+                tbUnitLocation.Text = "Vị trí Chú thích đơn vị tính:";
+            }
+        }
+        private void btnCreateChart_Click(object sender, RoutedEventArgs e)
+        {
+            ExecuteChart();
+        }
+
+        private void btnImportFile_Click(object sender, RoutedEventArgs e)
+        {
+            ImportExcel import = new ImportExcel(dtRow, dtColumn, dtgColumn);
+        }
+
+        private void btnExportFile_Click(object sender, RoutedEventArgs e)
+        {
+            ExportExcel export = new ExportExcel(dtRow, dtColumn);
+        }
+
+        private void cbShowNote_Click(object sender, RoutedEventArgs e)
+        {
+            ExecuteChart();
+        }
+
+        private void cbShowValue_Click(object sender, RoutedEventArgs e)
+        {
+            ExecuteChart();
         }
     }
 }
