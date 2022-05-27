@@ -40,7 +40,7 @@ namespace MathSoftware.UCChart
         private void UCRowChart_Loaded(object sender, RoutedEventArgs e)
         {
             PointLabel = chartPoint =>
-              string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+              string.Format("{0} ({1:P})", chartPoint.X, chartPoint.Participation);
 
             for (int i = 0; i < _objChart._lsColumn.Count; i++)
             {
@@ -55,11 +55,33 @@ namespace MathSoftware.UCChart
                     {
                         _row.Title = _objChart._lsColumn[i][j].ToString();
                         _row.Values = _value;
-                        _row.DataLabels = true;
+                        _row.DataLabels = _objChart._showData;
                         _row.LabelPoint = PointLabel;
                         _objChart._seriesCollection.Add(_row);
 
                         if (_objChart._titlePositon.ToString().Equals("Ở dưới"))
+                        {
+                            axisX.Position = AxisPosition.LeftBottom;
+                        }
+                        else
+                        {
+                            axisX.Position = AxisPosition.RightTop;
+                        }
+
+                        axisY.FontSize = 15;
+                        axisY.Labels = _objChart._lsRow;
+                        axisY.Title = _objChart._chartTitle.ToString();
+
+                        if (_objChart._showNote == true)
+                        {
+                            axisX.Title = _objChart._verticalAxis.ToString();
+                        }
+                        else
+                        {
+                            axisX.Title = null;
+                        }
+
+                        if (_objChart._noteUnitPosition.ToString().Equals("Bên trái"))
                         {
                             axisY.Position = AxisPosition.LeftBottom;
                         }
@@ -68,12 +90,23 @@ namespace MathSoftware.UCChart
                             axisY.Position = AxisPosition.RightTop;
                         }
 
-                        axisY.FontSize = 15;
-                        axisY.Labels = _objChart._lsRow;
-                        axisY.Title = _objChart._chartTitle.ToString();
-                        //axisY.Title = _objChart._verticalAxis.ToString();
+                        if (_objChart._noteUnitChart.ToString().Equals("Bên trái"))
+                        {
+                            RowChart.LegendLocation = LegendLocation.Left;
+                        }
+                        else if (_objChart._noteUnitChart.ToString().Equals("Bên phải"))
+                        {
+                            RowChart.LegendLocation = LegendLocation.Right;
+                        }
+                        else if (_objChart._noteUnitChart.ToString().Equals("Bên trên"))
+                        {
+                            RowChart.LegendLocation = LegendLocation.Top;
+                        }
+                        else
+                        {
+                            RowChart.LegendLocation = LegendLocation.Bottom;
+                        }
 
-                        RowChart.LegendLocation = LegendLocation.Top;
                         RowChart.Series = _objChart._seriesCollection;
                     }
                     else

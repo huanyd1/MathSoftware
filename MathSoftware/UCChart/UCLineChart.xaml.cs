@@ -54,7 +54,7 @@ namespace MathSoftware.UCChart
                     {
                         _line.Title = _objChart._lsColumn[i][j].ToString();
                         _line.Values = _value;
-                        _line.DataLabels = true;
+                        _line.DataLabels = _objChart._showData;
                         _line.LabelPoint = PointLabel;
                         _objChart._seriesCollection.Add(_line);
 
@@ -70,9 +70,42 @@ namespace MathSoftware.UCChart
                         axisX.FontSize = 15;
                         axisX.Labels = _objChart._lsRow;
                         axisX.Title = _objChart._chartTitle.ToString();
-                        //axisY.Title = _objChart._verticalAxis.ToString();
 
-                        LineChart.LegendLocation = LegendLocation.Top;
+                        if (_objChart._showNote == true)
+                        {
+                            axisY.Title = _objChart._verticalAxis.ToString();
+                        }
+                        else
+                        {
+                            axisY.Title = null;
+                        }
+
+                        if (_objChart._noteUnitPosition.ToString().Equals("Bên trái"))
+                        {
+                            axisY.Position = AxisPosition.LeftBottom;
+                        }
+                        else
+                        {
+                            axisY.Position = AxisPosition.RightTop;
+                        }
+
+                        if (_objChart._noteUnitChart.ToString().Equals("Bên trái"))
+                        {
+                            LineChart.LegendLocation = LegendLocation.Left;
+                        }
+                        else if (_objChart._noteUnitChart.ToString().Equals("Bên phải"))
+                        {
+                            LineChart.LegendLocation = LegendLocation.Right;
+                        }
+                        else if (_objChart._noteUnitChart.ToString().Equals("Bên trên"))
+                        {
+                            LineChart.LegendLocation = LegendLocation.Top;
+                        }
+                        else
+                        {
+                            LineChart.LegendLocation = LegendLocation.Bottom;
+                        }
+
                         LineChart.Series = _objChart._seriesCollection;
                     }
                     else

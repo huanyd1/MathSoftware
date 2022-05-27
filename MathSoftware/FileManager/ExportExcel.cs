@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace MathSoftware.FileManager
 {
@@ -14,7 +16,6 @@ namespace MathSoftware.FileManager
     {
         private DataTable _dtRow;
         private DataTable _dtColumn;
-        private DataRow _row;
 
         public ExportExcel(DataTable row, DataTable column)
         {
@@ -30,32 +31,32 @@ namespace MathSoftware.FileManager
             {
                 List<String> lines = new List<String>();
 
-                string NameCol = "";
+                string _nameColumn = "";
 
                 int i = 0;
 
-                foreach (DataRow dtR in _dtRow.Rows)
+                foreach (DataRow _row in _dtRow.Rows)
                 {
                     int n = _dtRow.Rows.Count;
 
                     if (i == n - 1)
                     {
-                        NameCol += dtR.ItemArray[0].ToString();
+                        _nameColumn += _row.ItemArray[0].ToString();
                     }
                     else
                     {
                         if (i != 0)
                         {
-                            NameCol += dtR.ItemArray[0].ToString() + ",";
+                            _nameColumn += _row.ItemArray[0].ToString() + ",";
                         }
                         else
                         {
-                            NameCol += ",";
+                            _nameColumn += ",";
                         }
                     }
                     i++;
                 }
-                lines.Add(NameCol);
+                lines.Add(_nameColumn);
 
                 for (i = 0; i < _dtColumn.Rows.Count; i++)
                 {
@@ -66,37 +67,58 @@ namespace MathSoftware.FileManager
                     }
 
                     int n = strR.Length;
-                    NameCol = "";
+                    _nameColumn = "";
                     for (int j = 0; j < n; j++)
                     {
                         if (j == n - 1)
                         {
-                            NameCol += strR[j].ToString();
+                            _nameColumn += strR[j].ToString();
                         }
                         else
                         {
-                            NameCol += strR[j].ToString() + ",";
+                            _nameColumn += strR[j].ToString() + ",";
                         }
                     }
-                    lines.Add(NameCol);
+                    lines.Add(_nameColumn);
                 }
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "CSV File|*.csv";
-                saveFileDialog.Title = "Save an CSV File";
+                saveFileDialog.Filter = "CSV File|*.csv|XLSX File|*.xlsx";
+                saveFileDialog.Title = "Save an Excel File";
                 saveFileDialog.ShowDialog();
 
-                FileStream fs = (FileStream)saveFileDialog.OpenFile();
+                string ext = Path.GetExtension(saveFileDialog.FileName);
 
-                using (StreamWriter writer = new StreamWriter(fs, Encoding.UTF8))
+                Mouse.OverrideCursor = Cursors.Wait;
+
+                if (ext == ".xlsx" || ext == ".xls")
                 {
-
-                    foreach (string line in lines)
-                        writer.WriteLine(line);
+                    ExcelPackage.LicenseContext = LicenseContext.Commercial;
+                    var package = new ExcelPackage(saveFileDialog.FileName);
+                    ExcelWorksheet ws = package.Workbook.Worksheets.Add("Accounts");
+                    ws.Cells["A1"].LoadFromDataTable(_dtColumn, true);
+                    package.Save();
                 }
+                else
+                {
+                    FileStream fs = (FileStream)saveFileDialog.OpenFile();
+
+                    using (StreamWriter writer = new StreamWriter(fs, Encoding.UTF8))
+                    {
+
+                        foreach (string line in lines)
+                        {
+                            writer.WriteLine(line);
+                        }
+                    }
+                }
+
+                MessageBox.Show("Xuất dữ liệu thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                Mouse.OverrideCursor = Cursors.Arrow;
             }
             catch
             {
+                Mouse.OverrideCursor = Cursors.Arrow;
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }

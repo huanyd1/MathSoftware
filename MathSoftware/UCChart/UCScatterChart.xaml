@@ -13,6 +13,9 @@
             <Wpf:CartesianChart.AxisX>
                 <Wpf:Axis x:Name="axisX"></Wpf:Axis>
             </Wpf:CartesianChart.AxisX>
+            <Wpf:CartesianChart.AxisY>
+                <Wpf:Axis x:Name="axisY"></Wpf:Axis>
+            </Wpf:CartesianChart.AxisY>
         </Wpf:CartesianChart>
     </Grid>
 </UserControl>

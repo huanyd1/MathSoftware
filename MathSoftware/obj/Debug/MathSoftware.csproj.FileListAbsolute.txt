@@ -50,8 +50,6 @@ C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\HarfBuzzSharp.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.HarfBuzz.dll
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.Views.Desktop.Common.dll
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.Views.WPF.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\System.Buffers.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\System.Drawing.Common.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\System.Memory.dll
@@ -64,10 +62,6 @@ C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.pdb
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.xml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.HarfBuzz.pdb
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.HarfBuzz.xml
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.Views.Desktop.Common.pdb
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.Views.Desktop.Common.xml
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.Views.WPF.pdb
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\SkiaSharp.Views.WPF.xml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\System.Buffers.xml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\System.Memory.xml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\System.Numerics.Vectors.xml

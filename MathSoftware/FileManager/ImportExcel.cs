@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace MathSoftware.FileManager
 {
@@ -40,6 +41,9 @@ namespace MathSoftware.FileManager
 
                 openFileDialog.Filter = "CSV File|*.csv|XLSX File|*.xlsx|XLS File|*.xls";
                 string ext = Path.GetExtension(openFileDialog.FileName);
+
+                Mouse.OverrideCursor = Cursors.Wait;
+
                 if (ext == ".xlsx" || ext == ".xls")
                 {
                     try
@@ -94,7 +98,7 @@ namespace MathSoftware.FileManager
                             _dtColumn.Rows.Add(_row);
                         }
 
-                        MessageBox.Show("Nhập dữ liệut thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Nhập dữ liệu thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     catch (Exception ex)
                     {
@@ -165,18 +169,19 @@ namespace MathSoftware.FileManager
                     }
                     _dtColumn.Rows.RemoveAt(0);
 
-                    MessageBox.Show("Nhập dữ liệut thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Nhập dữ liệu thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
                     MessageBox.Show("Sai định dạng dữ liệu,vui lòng thử lại", "Cảnh báo", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+
+                Mouse.OverrideCursor = Cursors.Arrow;
             }
-
-
             catch
             {
-                System.Windows.MessageBox.Show("Bạn chưa chọn file hoặc sai định dạng, vui lòng thử lại", "Cảnh báo", MessageBoxButton.OK, MessageBoxImage.Error);
+                Mouse.OverrideCursor = Cursors.Arrow;
+                MessageBox.Show("Bạn chưa chọn file hoặc sai định dạng, vui lòng thử lại", "Cảnh báo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
