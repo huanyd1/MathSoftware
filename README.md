@@ -47,8 +47,8 @@ Phần mềm toán hỗ trợ học sinh vẽ biểu đồ
     
 •	Cập nhật version mới nhất tại
 
-    o https://drive.google.com/drive/folders/1KfK9kC3IJTa4jCAiVZn1BPB4XSjdw8dq?usp=sharing
+    https://drive.google.com/drive/folders/1KfK9kC3IJTa4jCAiVZn1BPB4XSjdw8dq?usp=sharing
 
 •	Hãy cho tôi biết những vấn đề của Phần mềm 
 
-    o https://docs.google.com/spreadsheets/d/1WI11Z-vvLEJup1esWF007NZGJb1uqIfKNtJY3QXdh_E/edit?usp=sharing
+    https://docs.google.com/spreadsheets/d/1WI11Z-vvLEJup1esWF007NZGJb1uqIfKNtJY3QXdh_E/edit?usp=sharing
