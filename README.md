@@ -9,7 +9,9 @@ Phần mềm toán hỗ trợ học sinh vẽ biểu đồ
 
     https://docs.google.com/spreadsheets/d/1WI11Z-vvLEJup1esWF007NZGJb1uqIfKNtJY3QXdh_E/edit?usp=sharing
 
+
 ![image](https://user-images.githubusercontent.com/65003197/170765516-5b42fd53-6a33-41bd-ba4f-3f3fb1b4897b.png)
+
 
 •	Vẽ các loại biểu đồ :
 
