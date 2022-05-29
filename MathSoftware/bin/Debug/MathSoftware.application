@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="MathSoftware.exe.manifest" size="26883">
+    <dependentAssembly dependencyType="install" codebase="MathSoftware.exe.manifest" size="38954">
       <assemblyIdentity name="MathSoftware.exe" version="1.0.0.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Yr5SeyLZ0ytqyyeDi5u57ptIbg66hFdEskVhelp2w8s=</dsig:DigestValue>
+        <dsig:DigestValue>95Y2/BnZ9WOJjpReI/bCAb8A31mONUIGn0mzofNyPaU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

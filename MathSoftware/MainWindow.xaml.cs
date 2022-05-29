@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
 using MathSoftware.FileManager;
 using MathSoftware.Object;
 
@@ -220,7 +221,7 @@ namespace MathSoftware
             GetChartData data = new GetChartData(_objChart);
             data.GetRowData(dtRow);
             data.GetColumnData(dtColumn);
-            data.GetTitleChart(txtChartTitle.Text.ToString());
+            data.GetTitleChart(txtChartTitle.Text.ToString(), int.Parse(sldFsTittle.Value.ToString()), "");
             data.GetChartType(cbChartType);
             data.GetNoteAxis(txtNoteX.Text.ToString());
             data.GetShowValue(bool.Parse(cbShowNote.IsChecked.ToString()), bool.Parse(cbShowValue.IsChecked.ToString()));
@@ -295,6 +296,28 @@ namespace MathSoftware
         private void cbShowValue_Click(object sender, RoutedEventArgs e)
         {
             ExecuteChart();
+        }
+
+        private void sldFsTittle_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if(_objChart != null)
+            {
+                int _size = int.Parse(sldFsTittle.Value.ToString());
+                _objChart._titleSize = _size;
+                ExecuteChart();
+            }
+        }
+
+        private void clpTittle_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            //string _color = clpTittle.Foreground.ToString();
+            //_objChart._titleColor = _color;
+            //ExecuteChart();
+        }
+
+        private void ColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+
         }
     }
 }

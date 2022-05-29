@@ -58,11 +58,21 @@ namespace MathSoftware
             }
         }
 
-        public void GetTitleChart(string _title)
+        public void GetTitleChart(string title, int fontSize, string color)
         {
+            string _title = "";
+            int _fontSize = 25;
+            string _color = "#000000";
             try
             {
+                _title = title;
                 _objChartData._chartTitle = _title;
+
+                _fontSize = fontSize;
+                _objChartData._titleSize = _fontSize;
+
+                _color = color;
+                _objChartData._titleColor = color;
             }
             catch
             {
