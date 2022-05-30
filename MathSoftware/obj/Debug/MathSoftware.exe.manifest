@@ -138,14 +138,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MathSoftware.exe" size="61392">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MathSoftware.exe" size="63440">
       <assemblyIdentity name="MathSoftware" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kdq+mbK6BsZpvao6102BJzHx9RiEejd5c4L2u2O47AY=</dsig:DigestValue>
+        <dsig:DigestValue>hfxJWeUvSJVxM7arEXC70GlHNNw9UGtfxQ+y0fC/TxY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

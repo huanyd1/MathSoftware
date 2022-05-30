@@ -94,14 +94,21 @@ namespace MathSoftware
             }
         }
 
-        public void GetNoteAxis(string axisX)
+        public void GetNoteAxis(string axisX, int fontSize, string color)
         {
             string _axisX = "";
+            int _fontSize = 15;
+            string _color = "#000000";
             try
             {
                 _axisX = axisX;
-
                 _objChartData._verticalAxis = axisX;
+
+                _fontSize = fontSize;
+                _objChartData._verticalSize = _fontSize;
+
+                _color = color;
+                _objChartData._colorVerticalAxis = _color;
             }
             catch
             {

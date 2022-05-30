@@ -69,7 +69,7 @@ namespace MathSoftware.UCChart
                         }
 
                         axisX.FontSize = _objChart._titleSize;
-                       // axisX.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString(_objChart._titleColor);
+                        axisX.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString(_objChart._titleColor);
                         axisX.Labels = _objChart._lsRow;
                         axisX.Title = _objChart._chartTitle.ToString();
 
@@ -81,8 +81,11 @@ namespace MathSoftware.UCChart
                         {
                             axisY.Title = null;
                         }
-                        
-                        if(_objChart._noteUnitPosition.ToString().Equals("Bên trái"))
+
+                        axisY.FontSize = _objChart._verticalSize;
+                        axisY.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString(_objChart._colorVerticalAxis);
+
+                        if (_objChart._noteUnitPosition.ToString().Equals("Bên trái"))
                         {
                             axisY.Position = AxisPosition.LeftBottom;
                         }

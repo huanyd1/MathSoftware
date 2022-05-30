@@ -221,9 +221,9 @@ namespace MathSoftware
             GetChartData data = new GetChartData(_objChart);
             data.GetRowData(dtRow);
             data.GetColumnData(dtColumn);
-            data.GetTitleChart(txtChartTitle.Text.ToString(), int.Parse(sldFsTittle.Value.ToString()), "");
+            data.GetTitleChart(txtChartTitle.Text.ToString(), int.Parse(sldFsTittle.Value.ToString()), clpTittle.SelectedColorText.ToString());
             data.GetChartType(cbChartType);
-            data.GetNoteAxis(txtNoteX.Text.ToString());
+            data.GetNoteAxis(txtNoteX.Text.ToString(), int.Parse(sldFsNote.Value.ToString()), clpNote.SelectedColorText.ToString());
             data.GetShowValue(bool.Parse(cbShowNote.IsChecked.ToString()), bool.Parse(cbShowValue.IsChecked.ToString()));
             data.GetPosition(lbTitleLocation.SelectedItem.ToString(), lbUnitLocation.SelectedItem.ToString(), lbUnitChart.SelectedItem.ToString());
         }
@@ -262,16 +262,16 @@ namespace MathSoftware
 
         private void cbChartType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cbChartType.SelectedItem.ToString().Equals("Biểu đồ hàng"))
-            {
-                tbTitleLocation.Text = "Vị trí Chú thích đơn vị tính:";
-                tbUnitLocation.Text = "Vị trí Tiêu đề:";
-            }
-            else
-            {
-                tbTitleLocation.Text = "Vị trí Tiêu đề:";
-                tbUnitLocation.Text = "Vị trí Chú thích đơn vị tính:";
-            }
+            //if (cbChartType.SelectedItem.ToString().Equals("Biểu đồ hàng"))
+            //{
+            //    tbTitleLocation.Text = "Vị trí Chú thích đơn vị tính:";
+            //    tbUnitLocation.Text = "Vị trí Tiêu đề:";
+            //}
+            //else
+            //{
+            //    tbTitleLocation.Text = "Vị trí Tiêu đề:";
+            //    tbUnitLocation.Text = "Vị trí Chú thích đơn vị tính:";
+            //}
         }
         private void btnCreateChart_Click(object sender, RoutedEventArgs e)
         {
@@ -308,16 +308,52 @@ namespace MathSoftware
             }
         }
 
-        private void clpTittle_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        private void sldFsNote_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            //string _color = clpTittle.Foreground.ToString();
-            //_objChart._titleColor = _color;
-            //ExecuteChart();
+            if (_objChart != null)
+            {
+                int _size = int.Parse(sldFsTittle.Value.ToString());
+                _objChart._titleSize = _size;
+                ExecuteChart();
+            }
         }
 
-        private void ColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        private void clpTittle_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
+            string _color = "#000000";
+            if (_objChart != null)
+            {
+                _color = clpTittle.SelectedColorText.ToString();
+                _objChart._titleColor = _color;
+                ExecuteChart();
+            }
+        }
 
+        private void clpNote_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            string _color = "#000000";
+            if (_objChart != null)
+            {
+                _color = clpNote.SelectedColorText.ToString();
+                _objChart._colorVerticalAxis = _color;
+                ExecuteChart();
+            }
+        }
+
+        private void lbTitleLocation_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (_objChart != null)
+            {
+                ExecuteChart();
+            }
+        }
+
+        private void lbUnitLocation_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (_objChart != null)
+            {
+                ExecuteChart();
+            }
         }
     }
 }

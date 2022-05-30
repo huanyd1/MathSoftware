@@ -17,6 +17,8 @@ namespace MathSoftware.Object
         public string _titleColor { get; set; }
         public string _chartType { get; set; }
         public string _verticalAxis { get; set; }
+        public int _verticalSize { get; set; }
+        public string _colorVerticalAxis { get; set; }
         public string _horizontalAxis { get; set; }
         public bool _showNote { get; set; }
         public bool _showData { get; set; }
@@ -34,6 +36,8 @@ namespace MathSoftware.Object
             this._titleColor = "#000000";
             this._chartType = "";
             this._verticalAxis = "";
+            this._verticalSize = 15;
+            this._colorVerticalAxis = "#000000";
             this._horizontalAxis = "";
             this._showNote = true;
             this._showData = true;
