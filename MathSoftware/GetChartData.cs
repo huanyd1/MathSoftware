@@ -58,11 +58,21 @@ namespace MathSoftware
             }
         }
 
-        public void GetTitleChart(string _title)
+        public void GetTitleChart(string title, int fontSize, string color)
         {
+            string _title = "";
+            int _fontSize = 25;
+            string _color = "#000000";
             try
             {
+                _title = title;
                 _objChartData._chartTitle = _title;
+
+                _fontSize = fontSize;
+                _objChartData._titleSize = _fontSize;
+
+                _color = color;
+                _objChartData._titleColor = color;
             }
             catch
             {
@@ -84,14 +94,21 @@ namespace MathSoftware
             }
         }
 
-        public void GetNoteAxis(string axisX)
+        public void GetNoteAxis(string axisX, int fontSize, string color)
         {
             string _axisX = "";
+            int _fontSize = 15;
+            string _color = "#000000";
             try
             {
                 _axisX = axisX;
-
                 _objChartData._verticalAxis = axisX;
+
+                _fontSize = fontSize;
+                _objChartData._verticalSize = _fontSize;
+
+                _color = color;
+                _objChartData._colorVerticalAxis = _color;
             }
             catch
             {

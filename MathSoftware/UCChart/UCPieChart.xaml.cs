@@ -67,10 +67,10 @@ namespace MathSoftware.UCChart
                             axisX.Position = AxisPosition.RightTop;
                         }
 
-                        axisX.FontSize = 15;
+                        axisX.FontSize = _objChart._titleSize;
+                        axisX.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString(_objChart._titleColor);
                         axisX.Labels = _objChart._lsRow;
                         axisX.Title = _objChart._chartTitle.ToString();
-                        //axisY.Title = _objChart._verticalAxis.ToString();
 
                         PieChart.LegendLocation = LegendLocation.Top;
                         PieChart.Series = _objChart._seriesCollection;
