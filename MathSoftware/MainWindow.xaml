@@ -338,17 +338,41 @@
                         </StackPanel>
                     </Border>
                     <Border Grid.Row="4" BorderBrush="Black" BorderThickness=".5">
-                        <Button
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button
                             x:Name="btnCreateChart"
                             Click="btnCreateChart_Click"
                             Style="{StaticResource MaterialDesignRaisedDarkButton}"
                             Width="150"
                             Height="35">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Draw" Margin="0 0 10 0" />
-                                <TextBlock>Vẽ biểu đồ</TextBlock>
-                            </StackPanel>
-                        </Button>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Draw" Margin="0 0 10 0" />
+                                    <TextBlock>Vẽ biểu đồ</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button
+                            x:Name="btnExportChart"
+                            Click="btnExportChart_Click"
+                            Margin="40 0 0 0"
+                            Width="150"
+                            Height="35">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="ContentSave" Margin="0 0 10 0" />
+                                    <TextBlock>Lưu biểu đồ</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button
+                            x:Name="btnExportPDF"
+                            Click="btnExportPDF_Click"
+                            Margin="40 0 0 0"
+                            Width="150"
+                            Height="35">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="FilePdfBox" Margin="0 0 10 0" />
+                                    <TextBlock>Lưu biểu đồ</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
                     </Border>
                 </Grid>
             </Border>

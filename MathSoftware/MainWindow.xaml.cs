@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +16,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Aspose.Words;
+using GroupDocs.Conversion;
+using GroupDocs.Conversion.Options.Convert;
 using MaterialDesignThemes.Wpf;
 using MathSoftware.FileManager;
 using MathSoftware.Object;
+using MathSoftware.SaveImage;
+using Microsoft.Win32;
 
 namespace MathSoftware
 {
@@ -318,7 +326,7 @@ namespace MathSoftware
             }
         }
 
-        private void clpTittle_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        private void clpTittle_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<System.Windows.Media.Color?> e)
         {
             string _color = "#000000";
             if (_objChart != null)
@@ -329,7 +337,7 @@ namespace MathSoftware
             }
         }
 
-        private void clpNote_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        private void clpNote_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<System.Windows.Media.Color?> e)
         {
             string _color = "#000000";
             if (_objChart != null)
@@ -353,6 +361,80 @@ namespace MathSoftware
             if (_objChart != null)
             {
                 ExecuteChart();
+            }
+        }
+
+        private void btnExportChart_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "PNG File| *.png | JPG File | *.jpg";
+                save.Title = "Save chart to Image";
+                save.ShowDialog();
+
+                Mouse.OverrideCursor = Cursors.Wait;
+
+                RenderTargetBitmap rtb = new RenderTargetBitmap((int)grdChart.ActualWidth, (int)grdChart.ActualHeight, 96, 96, PixelFormats.Pbgra32);
+                rtb.Render(grdChart);
+
+                PngBitmapEncoder png = new PngBitmapEncoder();
+                png.Frames.Add(BitmapFrame.Create(rtb));
+                MemoryStream stream = new MemoryStream();
+                png.Save(stream);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
+                image.Save(save.FileName);
+
+                Mouse.OverrideCursor = Cursors.Arrow;
+                MessageBox.Show("Lưu biểu đồ thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch
+            {
+                Mouse.OverrideCursor = Cursors.Arrow;
+
+                MessageBox.Show("Đã xảy ra lỗi trong quá trình lưu biểu đồ", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void btnExportPDF_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "PDF File| *.pdf";
+                save.Title = "Save chart to PDF";
+                save.ShowDialog();
+
+                Mouse.OverrideCursor = Cursors.Wait;
+
+                RenderTargetBitmap rtb = new RenderTargetBitmap((int)grdChart.ActualWidth, (int)grdChart.ActualHeight, 96, 96, PixelFormats.Pbgra32);
+                rtb.Render(grdChart);
+
+                PngBitmapEncoder png = new PngBitmapEncoder();
+                png.Frames.Add(BitmapFrame.Create(rtb));
+                MemoryStream stream = new MemoryStream();
+                png.Save(stream);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
+
+                string pathImage = string.Format("{0}\\{1}", Environment.CurrentDirectory, "chart" + DateTime.Now.ToString("ddmmyyyyhhmms") + ".png");
+
+                image.Save(pathImage);
+
+                var doc = new Document();
+                var builder = new DocumentBuilder(doc);
+
+                builder.InsertImage(pathImage);
+
+                doc.Save(save.FileName);
+
+                Mouse.OverrideCursor = Cursors.Arrow;
+                MessageBox.Show("Lưu biểu đồ thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch
+            {
+                Mouse.OverrideCursor = Cursors.Arrow;
+
+                MessageBox.Show("Đã xảy ra lỗi trong quá trình lưu biểu đồ", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

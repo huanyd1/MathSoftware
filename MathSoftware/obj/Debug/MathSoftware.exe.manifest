@@ -42,6 +42,30 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aspose.Words.dll" size="16660704">
+      <assemblyIdentity name="Aspose.Words" version="22.5.0.0" publicKeyToken="716FCC553A201E56" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Y/ByG+3tqSmKqKDZdc8W36LatSPDUezz5Qd2f1+z5+A=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aspose.Words.Pdf2Word.dll" size="6342880">
+      <assemblyIdentity name="Aspose.Words.Pdf2Word" version="22.5.0.0" publicKeyToken="716FCC553A201E56" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>kIOv/rIkFtjeQA7kF/XFPj88igBPtBiXWVwkZV3MTWk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPPlus.dll" size="3153920">
       <assemblyIdentity name="EPPlus" version="6.0.4.0" publicKeyToken="EA159FDAA78159A1" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -74,6 +98,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>YX+KH5Ac1MXQc5sp9sClZrwiOvO4B11BEZvtJ7VaZ6s=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GroupDocs.Conversion.dll" size="80682176">
+      <assemblyIdentity name="GroupDocs.Conversion" version="22.4.0.0" publicKeyToken="716FCC553A201E56" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>mbhy7mqJ51ozRxBRfH23uEVQxVCZRLv1ImgNzb0cp5E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -138,14 +174,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MathSoftware.exe" size="63440">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MathSoftware.exe" size="66000">
       <assemblyIdentity name="MathSoftware" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hfxJWeUvSJVxM7arEXC70GlHNNw9UGtfxQ+y0fC/TxY=</dsig:DigestValue>
+        <dsig:DigestValue>Y1HZoX8TY6vDN006KQqQ7VHJP90+xyp521rmITY5fQc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -641,13 +677,13 @@
       <dsig:DigestValue>L0beruw9/NSpdczC4FD0F2HkmfEFa2IEG6g7gzvIjaA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MathSoftware.exe.config" size="4264">
+  <file name="MathSoftware.exe.config" size="4590">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xFXA7RdoqV/oFsRblBRNwcQf20eRDiwEaCFFMk+P670=</dsig:DigestValue>
+      <dsig:DigestValue>7G8lPPjW2g2bYD5jfGfoevNT0GhwNBUwwnj6f7a2E3s=</dsig:DigestValue>
     </hash>
   </file>
   <file name="x64\libHarfBuzzSharp.dll" size="914856">
