@@ -102,18 +102,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GroupDocs.Conversion.dll" size="80682176">
-      <assemblyIdentity name="GroupDocs.Conversion" version="22.4.0.0" publicKeyToken="716FCC553A201E56" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mbhy7mqJ51ozRxBRfH23uEVQxVCZRLv1ImgNzb0cp5E=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HarfBuzzSharp.dll" size="213928">
       <assemblyIdentity name="HarfBuzzSharp" version="1.0.0.0" publicKeyToken="0738EB9F132ED756" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -181,7 +169,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Y1HZoX8TY6vDN006KQqQ7VHJP90+xyp521rmITY5fQc=</dsig:DigestValue>
+        <dsig:DigestValue>hh4C43QlHm+qAOnJK6p4UC5EIA+OhGHi6CkBMdjWOfA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -677,13 +665,13 @@
       <dsig:DigestValue>L0beruw9/NSpdczC4FD0F2HkmfEFa2IEG6g7gzvIjaA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MathSoftware.exe.config" size="4590">
+  <file name="MathSoftware.exe.config" size="4346">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7G8lPPjW2g2bYD5jfGfoevNT0GhwNBUwwnj6f7a2E3s=</dsig:DigestValue>
+      <dsig:DigestValue>JrrF3agNuomGFvHhkaaXfqsvFMG1S3s8JH0InmhnCPY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="x64\libHarfBuzzSharp.dll" size="914856">

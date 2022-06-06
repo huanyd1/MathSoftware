@@ -17,12 +17,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Aspose.Words;
-using GroupDocs.Conversion;
-using GroupDocs.Conversion.Options.Convert;
 using MaterialDesignThemes.Wpf;
 using MathSoftware.FileManager;
 using MathSoftware.Object;
-using MathSoftware.SaveImage;
 using Microsoft.Win32;
 
 namespace MathSoftware
@@ -57,6 +54,7 @@ namespace MathSoftware
             LoadSettingTable();
             LoadcbChartType();
             LoadDataTable();
+            dtgColumn.CanUserSortColumns = false;
         }
 
         private void LoadSettingTable()
@@ -71,7 +69,7 @@ namespace MathSoftware
 
             dtRow.Columns.Add(column);
 
-            dtgRow.ItemsSource = dtRow.DefaultView;
+            //dtgRow.ItemsSource = dtRow.DefaultView;
 
             dtgColumn.ItemsSource = dtColumn.DefaultView;
         }
@@ -170,37 +168,37 @@ namespace MathSoftware
         }
         private void btnRemoveRow_Click(object sender, RoutedEventArgs e)
         {
-            if (dtgRow.SelectedItems.Count != 0)
-            {
-                dtColumn.Columns.RemoveAt(dtgRow.SelectedIndex);
-                dtgColumn.ItemsSource = null;
+            //if (dtgRow.SelectedItems.Count != 0)
+            //{
+            //    dtColumn.Columns.RemoveAt(dtgRow.SelectedIndex);
+            //    dtgColumn.ItemsSource = null;
 
-                dtRow.Rows.RemoveAt(dtgRow.SelectedIndex);
+            //    dtRow.Rows.RemoveAt(dtgRow.SelectedIndex);
 
-                dtgColumn.ItemsSource = dtColumn.DefaultView;
+            //    dtgColumn.ItemsSource = dtColumn.DefaultView;
 
-            }
-            else
-            {
-                MessageBox.Show("Bạn chưa chọn cột để xóa, vui lòng thử lại", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bạn chưa chọn cột để xóa, vui lòng thử lại", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+            //}
         }
 
         private void DtRow_RowChanged(object sender, DataRowChangeEventArgs e)
         {
-            dtgColumn.ItemsSource = null;
-            int index = dtgRow.SelectedIndex;
+            //dtgColumn.ItemsSource = null;
+            //int index = dtgRow.SelectedIndex;
 
-            if (index != -1)
-            {
-                DataRow row = dtRow.Rows[index];
+            //if (index != -1)
+            //{
+            //    DataRow row = dtRow.Rows[index];
 
-                dtColumn.Columns[index].ColumnName = row[0].ToString();
-                dtColumn.AcceptChanges();
-                dtgColumn.ItemsSource = null;
-                dtgColumn.ItemsSource = dtColumn.DefaultView;
-            }
-            dtgColumn.ItemsSource = dtColumn.DefaultView;
+            //    dtColumn.Columns[index].ColumnName = row[0].ToString();
+            //    dtColumn.AcceptChanges();
+            //    dtgColumn.ItemsSource = null;
+            //    dtgColumn.ItemsSource = dtColumn.DefaultView;
+            //}
+            //dtgColumn.ItemsSource = dtColumn.DefaultView;
         }
 
         private void btnAddColumn_Click(object sender, RoutedEventArgs e)

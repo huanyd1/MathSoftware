@@ -107,9 +107,6 @@ C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\ro\Xceed.Wpf.Aval
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\harfbuzz.dll
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\GroupDocs.Conversion.dll
-C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\GroupDocs.Conversion.xml
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\Aspose.Words.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\Aspose.Words.Pdf2Word.dll
 C:\Users\ASUS\source\repos\MathSoftware\MathSoftware\bin\Debug\Aspose.Words.xml
