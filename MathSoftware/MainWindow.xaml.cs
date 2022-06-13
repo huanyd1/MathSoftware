@@ -54,7 +54,7 @@ namespace MathSoftware
             LoadSettingTable();
             LoadcbChartType();
             LoadDataTable();
-            dtgColumn.CanUserSortColumns = false;
+            dtgColumn.CanUserSortColumns = false;   
         }
 
         private void LoadSettingTable()
@@ -433,6 +433,32 @@ namespace MathSoftware
                 Mouse.OverrideCursor = Cursors.Arrow;
 
                 MessageBox.Show("Đã xảy ra lỗi trong quá trình lưu biểu đồ", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void tgShowNote_Click(object sender, RoutedEventArgs e)
+        {
+            if(tgShowNote.IsChecked == true)
+            {
+                iconCheck.Kind = PackIconKind.CheckboxMarkedCircleOutline;
+                
+            }
+            else
+            {
+                iconCheck.Kind = PackIconKind.CheckboxBlankCircleOutline;
+            }
+        }
+
+        private void tgShowValue_Click(object sender, RoutedEventArgs e)
+        {
+            if (tgShowValue.IsChecked == true)
+            {
+                iconCheckValue.Kind = PackIconKind.CheckboxMarkedCircleOutline;
+
+            }
+            else
+            {
+                iconCheckValue.Kind = PackIconKind.CheckboxBlankCircleOutline;
             }
         }
     }

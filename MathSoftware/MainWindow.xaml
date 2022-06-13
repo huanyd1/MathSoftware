@@ -126,19 +126,114 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold">Tùy chỉnh biều đồ</Label>
                     <TextBox
+                        Grid.Row="1"
+                        Padding="10"
                         materialDesign:HintAssist.Hint="Tiêu đề biểu đồ"
+                        FontSize="18"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <ComboBox
-                        Grid.Row="1"
-                        materialDesign:HintAssist.Hint="Search"
+                        Grid.Row="2"
+                        FontSize="18"
+                        Padding="10"
+                        materialDesign:HintAssist.Hint="Loại biểu đồ"
                         IsEditable="True"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
                     <TextBox
-                        Grid.Row="2"
+                        Grid.Row="3"
+                        Padding="10"
+                        FontSize="18"
                         materialDesign:HintAssist.Hint="Chú thích biểu đồ"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <StackPanel Orientation="Horizontal" Grid.Row="4" VerticalAlignment="Center">
+                        <Label Padding="10" FontSize="18">Hiển thị chú thích biểu đồ :</Label>
+                        <ToggleButton
+                            x:Name="tgShowNote"
+                            Click="tgShowNote_Click"
+                            Margin="100 0 0 0"
+                            Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                            ToolTip="MaterialDesignFlatPrimaryToggleButton"
+                            IsChecked="True">
+                            <materialDesign:PackIcon
+                                x:Name="iconCheck"
+                                FontSize="18"
+                                Kind="CheckboxMarkedCircleOutline"
+                                Height="21"
+                                Width="21" />       
+                        </ToggleButton>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Center">
+                        <Label Padding="10" FontSize="18">Hiển thị giá trị biểu đồ :</Label>
+                        <ToggleButton
+                            x:Name="tgShowValue"
+                            Click="tgShowValue_Click"
+                            Margin="127 0 0 0"
+                            Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                            ToolTip="MaterialDesignFlatPrimaryToggleButton"
+                            IsChecked="True">
+                            <materialDesign:PackIcon
+                                x:Name="iconCheckValue"
+                                FontSize="18"
+                                Kind="CheckboxMarkedCircleOutline"
+                                Height="21"
+                                Width="21" />
+                        </ToggleButton>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="6" VerticalAlignment="Center">
+                        <Label Padding="10" FontSize="18">Hiển thị màu nền :</Label>
+                        <ToggleButton
+                            x:Name="tgShow"
+                            Margin="168 0 0 0"
+                            Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                            ToolTip="MaterialDesignFlatPrimaryToggleButton"
+                            IsChecked="True">
+                            <materialDesign:PackIcon
+                                FontSize="18"
+                                Kind="CheckboxMarkedCircleOutline"
+                                Height="21"
+                                Width="21" />
+                        </ToggleButton>
+                    </StackPanel>
+                    <Label FontSize="15" Grid.Row="7" VerticalAlignment="Center" FontWeight="Bold">Vẽ biểu đồ :</Label>
+                    <Button
+                        Grid.Row="8"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        Width="150"
+                        Height="35">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Draw" Margin="0 0 10 0" />
+                            <TextBlock>Vẽ biểu đồ</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Label FontSize="15" Grid.Row="9" FontWeight="Bold">Lưu biểu đồ :</Label>
+                    <StackPanel Orientation="Horizontal" Grid.Row="10" HorizontalAlignment="Center">
+                        <Button
+                            Margin="0 0 0 0"
+                            Width="150"
+                            Height="35">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ContentSave" Margin="0 0 10 0" />
+                                <TextBlock>Lưu biểu đồ</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            Margin="40 0 0 0"
+                            Width="150"
+                            Height="35">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="FilePdfBox" Margin="0 0 10 0" />
+                                <TextBlock>Lưu biểu đồ</TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Border>
         </Grid>
