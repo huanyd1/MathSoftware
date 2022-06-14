@@ -134,31 +134,143 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold">Tùy chỉnh biều đồ</Label>
-                    <TextBox
-                        Grid.Row="1"
-                        Padding="10"
-                        materialDesign:HintAssist.Hint="Tiêu đề biểu đồ"
-                        FontSize="18"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="1">
+                        <TextBox      
+                            x:Name="txtChartTitle"
+                            Width="500"
+                            Margin="50 0 0 0"
+                            Padding="10"
+                            materialDesign:HintAssist.Hint="Tiêu đề biểu đồ"
+                            FontSize="18"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <materialDesign:PopupBox
+                                DockPanel.Dock="Right"
+                                StaysOpen="True"
+                                PlacementMode="BottomAndAlignRightEdges">
+                            <StackPanel Width="300" Orientation="Vertical">
+                                <TextBlock Text="Cỡ chữ Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
+                                <Slider
+                                    x:Name="sldFsTittle"
+                                    ValueChanged="sldFsTittle_ValueChanged"
+                                    Minimum="10"
+                                    Maximum="50"
+                                    TickFrequency="2"
+                                    Style="{StaticResource MaterialDesignDiscreteSlider}"
+                                    ToolTip="MaterialDesignDiscreteSlider"
+                                    Value="15"
+                                    Padding="10"
+                                    Width="270" />
+                                <TextBlock Text="Vị trí Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
+                                <ListBox
+                                    x:Name="lbTitleLocation"
+                                    SelectionChanged="lbTitleLocation_SelectionChanged"
+                                    Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}"
+                                    FontSize="14"    >
+                                    <ListBoxItem
+                                        Content="Ở trên" />
+                                    <ListBoxItem
+                                        IsSelected="True"
+                                        Content="Ở dưới" />
+                                </ListBox>
+                                <TextBlock Text="Màu chữ Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
+                                <xctk1:ColorPicker  
+                                    x:Name="clpTittle"
+                                    SelectedColorChanged="clpTittle_SelectedColorChanged"
+                                    ColorMode="ColorCanvas"
+                                    Background="AliceBlue" 
+                                    BorderThickness="0" 
+                                    SelectedColor="Black" 
+                                    Padding="10" 
+                                    MaxDropDownWidth="250" 
+                                    ShowTabHeaders="False" 
+                                    DisplayColorAndName="True" 
+                                    DisplayColorTooltip="True" 
+                                    ShowAvailableColors="True" 
+                                    ShowDropDownButton="False" 
+                                    ShowRecentColors="False" 
+                                    ShowStandardColors="True" 
+                                    UsingAlphaChannel="False">
+                                </xctk1:ColorPicker>
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </StackPanel>
                     <ComboBox
+                        x:Name="cbChartType"
+                        SelectionChanged="cbChartType_SelectionChanged"
+                        Width="500"
+                        Margin="0 0 40 0"
                         Grid.Row="2"
                         FontSize="18"
                         Padding="10"
                         materialDesign:HintAssist.Hint="Loại biểu đồ"
                         IsEditable="True"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
-                    <TextBox
-                        Grid.Row="3"
-                        Padding="10"
-                        FontSize="18"
-                        materialDesign:HintAssist.Hint="Chú thích biểu đồ"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <StackPanel Orientation="Horizontal" Grid.Row="4" VerticalAlignment="Center">
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBox
+                            x:Name="txtNoteX"
+                            Width="500"
+                            Margin="50 0 0 0"
+                            Padding="10"
+                            FontSize="18"
+                            materialDesign:HintAssist.Hint="Chú thích biểu đồ"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <materialDesign:PopupBox
+                                DockPanel.Dock="Right"
+                                StaysOpen="True"
+                                PlacementMode="BottomAndAlignRightEdges">
+                            <StackPanel Width="300" Orientation="Vertical">
+                                <TextBlock Text="Cỡ chữ Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
+                                <Slider
+                                    x:Name="sldFsNote"
+                                    ValueChanged="sldFsNote_ValueChanged"
+                                    Minimum="10"
+                                    Maximum="50"
+                                    Style="{StaticResource MaterialDesignDiscreteSlider}"
+                                    ToolTip="MaterialDesignDiscreteSlider"
+                                    Value="10"
+                                    Padding="10"
+                                    Width="270" />
+                                <TextBlock Text="Vị trí Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
+                                <ListBox
+                                    x:Name="lbUnitLocation"
+                                    SelectionChanged="lbUnitLocation_SelectionChanged"
+                                    Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}"
+                                    FontSize="14"    >
+                                    <ListBoxItem
+                                        Content="Bên trái" />
+                                    <ListBoxItem
+                                        IsSelected="True"
+                                        Content="Bên phải" />
+                                </ListBox>
+                                <TextBlock Text="Màu chữ Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
+                                <xctk1:ColorPicker  
+                                    x:Name="clpNote"
+                                    SelectedColorChanged="clpNote_SelectedColorChanged"
+                                    ColorMode="ColorCanvas"
+                                    Background="AliceBlue" 
+                                    BorderThickness="0" 
+                                    SelectedColor="Black" 
+                                    Padding="10" 
+                                    MaxDropDownWidth="250" 
+                                    ShowTabHeaders="False" 
+                                    DisplayColorAndName="True" 
+                                    DisplayColorTooltip="True" 
+                                    ShowAvailableColors="True" 
+                                    ShowDropDownButton="False" 
+                                    ShowRecentColors="False" 
+                                    ShowStandardColors="True" 
+                                    UsingAlphaChannel="False">
+                                </xctk1:ColorPicker>
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Grid.Row="4" VerticalAlignment="Center" Margin="40 0 0 0">
                         <Label Padding="10" FontSize="18">Hiển thị chú thích biểu đồ :</Label>
                         <ToggleButton
                             x:Name="tgShowNote"
                             Click="tgShowNote_Click"
-                            Margin="100 0 0 0"
+                            Margin="230 0 0 0"
                             Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
                             ToolTip="MaterialDesignFlatPrimaryToggleButton"
                             IsChecked="True">
@@ -170,12 +282,12 @@
                                 Width="21" />       
                         </ToggleButton>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Center" Margin="40 0 0 0">
                         <Label Padding="10" FontSize="18">Hiển thị giá trị biểu đồ :</Label>
                         <ToggleButton
                             x:Name="tgShowValue"
                             Click="tgShowValue_Click"
-                            Margin="127 0 0 0"
+                            Margin="257 0 0 0"
                             Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
                             ToolTip="MaterialDesignFlatPrimaryToggleButton"
                             IsChecked="True">
@@ -186,12 +298,39 @@
                                 Height="21"
                                 Width="21" />
                         </ToggleButton>
+
+                        <materialDesign:PopupBox
+                                DockPanel.Dock="Right"
+                                StaysOpen="True"
+                                Margin="5 0 0 0"
+                                PlacementMode="BottomAndAlignRightEdges">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock  Text="Vị trí Chú thích biểu đồ:" FontSize="14" Margin="15 0 0 0"></TextBlock>
+                                <ListBox
+                                        x:Name="lbUnitChart"
+                                        Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}"
+                                        FontSize="14">
+                                    <ListBoxItem
+                                        Content="Bên trái" 
+                                        IsSelected="True"/>
+                                    <ListBoxItem
+                                        Content="Bên phải" />
+                                    <ListBoxItem
+                                        Content="Bên trên" 
+                                        IsSelected="True"/>
+                                    <ListBoxItem
+                                        Content="Bên dưới" />
+                                </ListBox>
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+
+
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Grid.Row="6" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Grid.Row="6" VerticalAlignment="Center" Margin="40 0 0 0">
                         <Label Padding="10" FontSize="18">Hiển thị màu nền :</Label>
                         <ToggleButton
                             x:Name="tgShow"
-                            Margin="168 0 0 0"
+                            Margin="298 0 0 0"
                             Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
                             ToolTip="MaterialDesignFlatPrimaryToggleButton"
                             IsChecked="True">
@@ -202,8 +341,10 @@
                                 Width="21" />
                         </ToggleButton>
                     </StackPanel>
-                    <Label FontSize="15" Grid.Row="7" VerticalAlignment="Center" FontWeight="Bold">Vẽ biểu đồ :</Label>
+                    <Label FontSize="15" Grid.Row="7" VerticalAlignment="Center" FontWeight="Bold" Margin="40 0 0 0">Vẽ biểu đồ :</Label>
                     <Button
+                        x:Name="btnCreateChart"
+                        Click="btnCreateChart_Click"
                         Grid.Row="8"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         Width="150"
@@ -213,7 +354,7 @@
                             <TextBlock>Vẽ biểu đồ</TextBlock>
                         </StackPanel>
                     </Button>
-                    <Label FontSize="15" Grid.Row="9" FontWeight="Bold">Lưu biểu đồ :</Label>
+                    <Label FontSize="15" Grid.Row="9" FontWeight="Bold" Margin="40 0 0 0">Lưu biểu đồ :</Label>
                     <StackPanel Orientation="Horizontal" Grid.Row="10" HorizontalAlignment="Center">
                         <Button
                             Margin="0 0 0 0"
@@ -238,261 +379,7 @@
             </Border>
         </Grid>
         <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"></RowDefinition>
-                <RowDefinition Height="2*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Border Grid.Row="0" BorderBrush="DeepSkyBlue" BorderThickness="2"> 
-                <Grid Grid.Row="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Border Grid.Row="0" BorderBrush="Black" BorderThickness=".5">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Tiêu đề biểu đồ:" FontSize="17" Margin="120 4 0 0"/>
-                            <TextBox x:Name="txtChartTitle" materialDesign:HintAssist.Hint="Nhập tiêu đề của biểu đồ" Width="500" FontSize="17" Margin="60 0 0 0" />
-                            <materialDesign:PopupBox
-                                DockPanel.Dock="Right"
-                                StaysOpen="True"
-                                PlacementMode="BottomAndAlignRightEdges">
-                                <StackPanel Width="300" Orientation="Vertical">
-                                    <TextBlock Text="Cỡ chữ Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
-                                    <Slider
-                                        x:Name="sldFsTittle"
-                                        ValueChanged="sldFsTittle_ValueChanged"
-                                        Minimum="10"
-                                        Maximum="50"
-                                        TickFrequency="2"
-                                        Style="{StaticResource MaterialDesignDiscreteSlider}"
-                                        ToolTip="MaterialDesignDiscreteSlider"
-                                        Value="15"
-                                        Padding="10"
-                                        Width="270" />
-                                    <TextBlock Text="Vị trí Tiêu đề:" x:Name="tbTitleLocation" FontSize="14" Margin="15 0 0 0"></TextBlock>
-                                    <ListBox
-                                    x:Name="lbTitleLocation"
-                                    SelectionChanged="lbTitleLocation_SelectionChanged"
-                                    Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}"
-                                    FontSize="14"    >
-                                        <ListBoxItem
-                                        Content="Ở trên" />
-                                        <ListBoxItem
-                                        IsSelected="True"
-                                        Content="Ở dưới" />
-                                    </ListBox>
-                                    <TextBlock Text="Màu chữ Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
-                                    <xctk1:ColorPicker  
-                                        x:Name="clpTittle"
-                                        SelectedColorChanged="clpTittle_SelectedColorChanged"
-                                        ColorMode="ColorCanvas"
-                                        Background="AliceBlue" 
-                                        BorderThickness="0" 
-                                        SelectedColor="Black" 
-                                        Padding="10" 
-                                        MaxDropDownWidth="250" 
-                                        ShowTabHeaders="False" 
-                                        DisplayColorAndName="True" 
-                                        DisplayColorTooltip="True" 
-                                        ShowAvailableColors="True" 
-                                        ShowDropDownButton="False" 
-                                        ShowRecentColors="False" 
-                                        ShowStandardColors="True" 
-                                        UsingAlphaChannel="False">
-                                    </xctk1:ColorPicker>
-                                </StackPanel>
-                            </materialDesign:PopupBox>
-                        </StackPanel>
-                    </Border>
-
-                    <Border Grid.Row="1" BorderBrush="Black" BorderThickness=".5">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Chọn loại biểu đồ:" FontSize="17" VerticalAlignment="Center" Margin="120 4 0 0"/>
-                            <ComboBox
-                                x:Name="cbChartType"
-                                SelectionChanged="cbChartType_SelectionChanged"
-                                Style="{StaticResource MaterialDesignComboBox}"
-                                Margin="43 0 0 0"
-                                FontSize="17"
-                                materialDesign:HintAssist.Hint="Chọn loại biểu đồ"
-                                materialDesign:TextFieldAssist.HasClearButton="True"
-                                Width="500">
-                            </ComboBox>
-                        </StackPanel>
-                    </Border>
-
-                    <Border Grid.Row="2" BorderBrush="Black" BorderThickness=".5">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Chú thích:" FontSize="17" VerticalAlignment="Center" Margin="120 0 0 0"/>
-                            <TextBox x:Name="txtNoteX" Text="" FontSize="17" Margin="102 0 0 0" materialDesign:HintAssist.Hint="Nhập chú thích" Width="500"/>
-                            <materialDesign:PopupBox
-                                DockPanel.Dock="Right"
-                                StaysOpen="True"
-                                PlacementMode="BottomAndAlignRightEdges">
-                                <StackPanel Width="300" Orientation="Vertical">
-                                    <TextBlock Text="Cỡ chữ Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
-                                    <Slider
-                                        x:Name="sldFsNote"
-                                        ValueChanged="sldFsNote_ValueChanged"
-                                        Minimum="10"
-                                        Maximum="50"
-                                        Style="{StaticResource MaterialDesignDiscreteSlider}"
-                                        ToolTip="MaterialDesignDiscreteSlider"
-                                        Value="10"
-                                        Padding="10"
-                                        Width="270" />
-                                    <TextBlock x:Name="tbUnitLocation" Text="Vị trí Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
-                                    <ListBox
-                                    x:Name="lbUnitLocation"
-                                    SelectionChanged="lbUnitLocation_SelectionChanged"
-                                    Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}"
-                                    FontSize="14"    >
-                                        <ListBoxItem
-                                        Content="Bên trái" />
-                                        <ListBoxItem
-                                        IsSelected="True"
-                                        Content="Bên phải" />
-                                    </ListBox>
-                                    <TextBlock Text="Màu chữ Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
-                                    <xctk1:ColorPicker  
-                                        x:Name="clpNote"
-                                        SelectedColorChanged="clpNote_SelectedColorChanged"
-                                        ColorMode="ColorCanvas"
-                                        Background="AliceBlue" 
-                                        BorderThickness="0" 
-                                        SelectedColor="Black" 
-                                        Padding="10" 
-                                        MaxDropDownWidth="250" 
-                                        ShowTabHeaders="False" 
-                                        DisplayColorAndName="True" 
-                                        DisplayColorTooltip="True" 
-                                        ShowAvailableColors="True" 
-                                        ShowDropDownButton="False" 
-                                        ShowRecentColors="False" 
-                                        ShowStandardColors="True" 
-                                        UsingAlphaChannel="False">
-                                    </xctk1:ColorPicker>
-                                </StackPanel>
-                            </materialDesign:PopupBox>
-                        </StackPanel>
-                    </Border>
-
-                    <Border Grid.Row="3" BorderBrush="Black" BorderThickness=".5">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <TextBlock Text="Tùy chọn biểu đồ:" FontSize="17" VerticalAlignment="Center" Margin="120 0 0 0"/>
-                            <CheckBox
-                                x:Name="cbShowNote"
-                                Click="cbShowNote_Click"
-                                IsThreeState="False"
-                                IsChecked="True"
-                                Margin="44 0 0 0"
-                                FontSize="14"
-                                Content="Hiển thị chú thích" />
-                            <CheckBox
-                                x:Name="cbShowValue"
-                                Click="cbShowValue_Click"
-                                IsThreeState="False"
-                                IsChecked="True"
-                                Margin="25 0 0 0"
-                                FontSize="14"
-                                Content="Hiển thị giá trị" />
-                            <CheckBox
-                                IsThreeState="False"
-                                IsChecked="True"
-                                Margin="25 0 0 0"
-                                FontSize="14"
-                                Content="Màu nền" />
-                            <materialDesign:PopupBox
-                                DockPanel.Dock="Right"
-                                StaysOpen="True"
-                                Margin="50,0,0,0"
-                                PlacementMode="BottomAndAlignRightEdges">
-                                <StackPanel Orientation="Vertical">
-                                    <!--<TextBlock x:Name="tbTitleLocation" Text="Vị trí Tiêu đề:" FontSize="14" Margin="15 0 0 0"></TextBlock>
-                                    <ListBox
-                                    x:Name="lbTitleLocation"
-                                    Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}"
-                                    FontSize="14"    >
-                                        <ListBoxItem
-                                        Content="Ở trên" />
-                                        <ListBoxItem
-                                        IsSelected="True"
-                                        Content="Ở dưới" />
-                                    </ListBox>
-                                    <TextBlock x:Name="tbUnitLocation" Text="Vị trí Chú thích đơn vị tính:" FontSize="14" Margin="15 0 0 0"></TextBlock>
-                                    <ListBox
-                                        x:Name="lbUnitLocation"
-                                        Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}"
-                                        FontSize="14"    >
-                                        <ListBoxItem
-                                        Content="Bên trái" 
-                                        IsSelected="True"/>
-                                        <ListBoxItem
-                                        Content="Bên phải" />
-                                    </ListBox>-->
-                                    <TextBlock  Text="Vị trí Chú thích biểu đồ:" FontSize="14" Margin="15 0 0 0"></TextBlock>
-                                    <ListBox
-                                        x:Name="lbUnitChart"
-                                        Style="{StaticResource MaterialDesignChoiceChipPrimaryListBox}"
-                                        FontSize="14">
-                                        <ListBoxItem
-                                        Content="Bên trái" 
-                                        IsSelected="True"/>
-                                        <ListBoxItem
-                                        Content="Bên phải" />
-                                        <ListBoxItem
-                                        Content="Bên trên" 
-                                        IsSelected="True"/>
-                                        <ListBoxItem
-                                        Content="Bên dưới" />
-                                    </ListBox>
-                                </StackPanel>
-                            </materialDesign:PopupBox>
-                        </StackPanel>
-                    </Border>
-                    <Border Grid.Row="4" BorderBrush="Black" BorderThickness=".5">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Button
-                            x:Name="btnCreateChart"
-                            Click="btnCreateChart_Click"
-                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                            Width="150"
-                            Height="35">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Draw" Margin="0 0 10 0" />
-                                    <TextBlock>Vẽ biểu đồ</TextBlock>
-                                </StackPanel>
-                            </Button>
-                            <Button
-                            x:Name="btnExportChart"
-                            Click="btnExportChart_Click"
-                            Margin="40 0 0 0"
-                            Width="150"
-                            Height="35">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="ContentSave" Margin="0 0 10 0" />
-                                    <TextBlock>Lưu biểu đồ</TextBlock>
-                                </StackPanel>
-                            </Button>
-                            <Button
-                            x:Name="btnExportPDF"
-                            Click="btnExportPDF_Click"
-                            Margin="40 0 0 0"
-                            Width="150"
-                            Height="35">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="FilePdfBox" Margin="0 0 10 0" />
-                                    <TextBlock>Lưu biểu đồ</TextBlock>
-                                </StackPanel>
-                            </Button>
-                        </StackPanel>
-                    </Border>
-                </Grid>
-            </Border>
-            <Border Grid.Row="1" BorderBrush="DeepSkyBlue" BorderThickness="1">
+            <Border BorderBrush="DeepSkyBlue" BorderThickness="1">
                 <Grid x:Name="grdChart">
                     
                 </Grid>
