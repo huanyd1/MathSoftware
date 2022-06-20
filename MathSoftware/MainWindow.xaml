@@ -11,6 +11,11 @@
         d:DesignHeight="720" d:DesignWidth="1280"
         Loaded="Window_Loaded">
     <Grid>
+        <Grid.Resources>
+            <Style x:Key="DataTableTemplate" TargetType="{x:Type DataGridColumnHeader}">
+                <EventSetter Event="Click" Handler="DataGridColumnHeader_Click" />
+            </Style>
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -83,6 +88,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
                         <TextBox
+                            x:Name="txtTextHeader"
                             Width="320"
                             Margin="15 0 0 0"
                             materialDesign:HintAssist.Hint="Cập nhật tiêu đề cột"
@@ -115,7 +121,14 @@
                                     Width="35" />
                         </Button>
                     </StackPanel>
-                    <DataGrid x:Name="dtgColumn" Grid.Row="2"></DataGrid>
+                    <DataGrid x:Name="dtgColumn" Grid.Row="2">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridColumnHeader">
+                                <EventSetter Event="Click" Handler="DataGridColumnHeader_Click" />
+                                <EventSetter Event="MouseLeave" Handler="DataGridColumnHeader_MouseLeave" />
+                            </Style>
+                        </DataGrid.Resources>
+                    </DataGrid>
                 </Grid>
             </Border>
             <Border Grid.Row="1">

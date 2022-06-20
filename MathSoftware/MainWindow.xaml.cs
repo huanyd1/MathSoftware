@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -54,7 +55,8 @@ namespace MathSoftware
             LoadSettingTable();
             LoadcbChartType();
             LoadDataTable();
-            dtgColumn.CanUserSortColumns = false;   
+            dtgColumn.CanUserSortColumns = false;
+            dtgColumn.CanUserReorderColumns = false;
         }
 
         private void LoadSettingTable()
@@ -72,6 +74,9 @@ namespace MathSoftware
             //dtgRow.ItemsSource = dtRow.DefaultView;
 
             dtgColumn.ItemsSource = dtColumn.DefaultView;
+
+            System.Windows.Style style = this.FindResource("DataTableTemplate") as System.Windows.Style;
+            
         }
 
         private void LoadDataTable()
@@ -460,6 +465,34 @@ namespace MathSoftware
             {
                 iconCheckValue.Kind = PackIconKind.CheckboxBlankCircleOutline;
             }
+        }
+
+        int currentColumnIndex = 0;
+        private void DataGridColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            var columnHeader = sender as DataGridColumnHeader;
+            if (columnHeader != null)
+            {
+                columnHeader.Background = System.Windows.Media.Brushes.SkyBlue;
+                currentColumnIndex = columnHeader.DisplayIndex;
+                txtTextHeader.Text = columnHeader.DataContext.ToString();
+            }
+        }
+
+        private void DataGridColumnHeader_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var columnHeader = sender as DataGridColumnHeader;
+            if (columnHeader != null)
+            {
+                columnHeader.Background = System.Windows.Media.Brushes.WhiteSmoke;
+                currentColumnIndex = columnHeader.DisplayIndex;
+                txtTextHeader.Text = "";
+            }
+        }
+
+        private void DataGridColumnHeader_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
